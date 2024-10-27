@@ -34,7 +34,7 @@ const ConversorMoeda: React.FC = () => {
           setAmount={setValor}
           currency={moedaOrigem}
           setCurrency={setMoedaOrigem}
-          isOutput={false} // Não precisa de título
+          isOutput={false}
         />
       </div>
       <div>
