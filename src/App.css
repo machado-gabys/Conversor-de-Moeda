@@ -1,11 +1,10 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilo do corpo */
 body {
   height: 100vh;
   background: linear-gradient(to bottom, #EAB8EA, #A3C1E0, #B8E3A0);
@@ -20,7 +19,6 @@ body {
   text-align: center;
 }
 
-/* Logo da Aplicação */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -32,8 +30,6 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-/* Cabeçalho */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -44,8 +40,6 @@ body {
   font-size: calc(10px + 2vmin);
   color: #fff;
 }
-
-/* Link */
 .App-link {
   color: #61dafb;
   text-decoration: none;
@@ -57,7 +51,6 @@ body {
   color: #52a7db;
 }
 
-/* Animação */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
