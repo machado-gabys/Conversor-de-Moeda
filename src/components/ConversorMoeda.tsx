@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import exchangeRates from '../data/taxasCambio.json';
+import exchangeRatesData from '../data/taxasCambio.json';
 import CurrencyInput from './EntradaMoeda';
+
+interface ExchangeRates {
+  [key: string]: number;
+}
+
+const exchangeRates: ExchangeRates = exchangeRatesData;
 
 const ConversorMoeda: React.FC = () => {
   const [valor, setValor] = useState<number>(0);
@@ -21,21 +27,26 @@ const ConversorMoeda: React.FC = () => {
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px' }}>
       <h2>Conversor de Moeda</h2>
-      <CurrencyInput
-        amount={valor}
-        setAmount={setValor}
-        currency={moedaOrigem}
-        setCurrency={setMoedaOrigem}
-        title="De"
-      />
-      <CurrencyInput
-        amount={valorConvertido}
-        setAmount={setValorConvertido}
-        currency={moedaDestino}
-        setCurrency={setMoedaDestino}
-        title="Para"
-        isOutput
-      />
+      <div>
+        <label>De:</label>
+        <CurrencyInput
+          amount={valor}
+          setAmount={setValor}
+          currency={moedaOrigem}
+          setCurrency={setMoedaOrigem}
+          isOutput={false} // Não precisa de título
+        />
+      </div>
+      <div>
+        <label>Para:</label>
+        <CurrencyInput
+          amount={valorConvertido}
+          setAmount={setValorConvertido}
+          currency={moedaDestino}
+          setCurrency={setMoedaDestino}
+          isOutput
+        />
+      </div>
       <h3>
         Valor Convertido: {valorConvertido.toFixed(2)} {moedaDestino}
       </h3>
