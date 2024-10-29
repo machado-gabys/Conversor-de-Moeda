@@ -1,5 +1,8 @@
 import React from 'react';
+main
+=======
 import './App.css';
+master
 import CurrencyConverter from './components/ConversorMoeda';
 
 const App: React.FC = () => {

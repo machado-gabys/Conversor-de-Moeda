@@ -31,4 +31,8 @@ O projeto estará rodando em http://localhost:3000.
 │   └── index.tsx               # Ponto de entrada da aplicação
 │
 ├── package.json                # Dependências e scripts do projeto
+main
 └── README.md                   # Documentação do projeto
+=======
+└── README.md                   # Documentação do projeto
+master
