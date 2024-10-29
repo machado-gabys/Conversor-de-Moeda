@@ -24,7 +24,7 @@ const ConversorMoeda: React.FC = () => {
   const handleValorChange = (novoValor: number) => {
     if (novoValor < 0) {
       setErro('O valor não pode ser negativo.');
-      setValor(0); // Resetar o valor para zero ou outro valor válido
+      setValor(0);
     } else {
       setErro(null);
       setValor(novoValor);
