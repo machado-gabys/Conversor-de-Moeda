@@ -13,13 +13,17 @@ const ConversorMoeda: React.FC = () => {
   const [moedaOrigem, setMoedaOrigem] = useState<string>('USD');
   const [moedaDestino, setMoedaDestino] = useState<string>('EUR');
   const [valorConvertido, setValorConvertido] = useState<number>(0);
+
   const [erro, setErro] = useState<string | null>(null);
+=======
+
 
   const converterMoeda = (valor: number, de: string, para: string): number => {
     const taxaOrigem = exchangeRates[de];
     const taxaDestino = exchangeRates[para];
     return (valor / taxaOrigem) * taxaDestino;
   };
+
 
   const handleValorChange = (novoValor: number) => {
     if (novoValor < 0) {
@@ -31,6 +35,8 @@ const ConversorMoeda: React.FC = () => {
     }
   };
 
+=======
+
   useEffect(() => {
     setValorConvertido(converterMoeda(valor, moedaOrigem, moedaDestino));
   }, [valor, moedaOrigem, moedaDestino]);
@@ -38,6 +44,7 @@ const ConversorMoeda: React.FC = () => {
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px' }}>
       <h2>Conversor de Moeda</h2>
+
       <CurrencyInput
         amount={valor}
         setAmount={handleValorChange}
@@ -54,6 +61,28 @@ const ConversorMoeda: React.FC = () => {
         isOutput
       />
       {erro && <p style={{ color: 'red' }}>{erro}</p>}
+
+      <div>
+        <label>De:</label>
+        <CurrencyInput
+          amount={valor}
+          setAmount={setValor}
+          currency={moedaOrigem}
+          setCurrency={setMoedaOrigem}
+          isOutput={false}
+        />
+      </div>
+      <div>
+        <label>Para:</label>
+        <CurrencyInput
+          amount={valorConvertido}
+          setAmount={setValorConvertido}
+          currency={moedaDestino}
+          setCurrency={setMoedaDestino}
+          isOutput
+        />
+      </div>
+
       <h3>
         Valor Convertido: {valorConvertido.toFixed(2)} {moedaDestino}
       </h3>
